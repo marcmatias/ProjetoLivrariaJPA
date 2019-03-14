@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:body>
+	<h:form>
+		<h:panelGrid columns="2">
+			<h:outputLabel value="Digite o titulo: " for="titulo"/>
+			<h:inputText id="titulo" value="#{cadastroLivrosBean.livro.titulo}"/>
+			<h:outputLabel value="Digite a quantidade de paginas: " for="qtdePaginas"/>
+			<h:inputText id="qtdePaginas" value="#{cadastroLivrosBean.livro.qtdePaginas}"/>
+			<h:commandButton value="Enviar" action="#{cadastroLivrosBean.adicionarLivro}"/>
+		</h:panelGrid>
+	</h:form>
+</h:body>	
+
+</html>

@@ -41,4 +41,9 @@ public class Livro {
 	public void setQtdePaginas(int qtdePaginas) {
 		this.qtdePaginas = qtdePaginas;
 	}
+
+	@Override
+	public String toString() {
+		return "Livro [titulo=" + titulo + "]";
+	}
 }

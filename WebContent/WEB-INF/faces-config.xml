@@ -6,7 +6,7 @@
     version="2.3">
     
     <lifecycle>
-    	<phase-listener>com.aula.util.LogPhaseListener</phase-listener>
+    	<phase-listener>br.com.aula.util.LogPhaseListener</phase-listener>
     </lifecycle>
 
 </faces-config>

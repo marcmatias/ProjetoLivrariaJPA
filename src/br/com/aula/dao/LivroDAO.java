@@ -1,6 +1,7 @@
 package br.com.aula.dao;
 
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 
@@ -51,5 +52,19 @@ public class LivroDAO implements GenericDAO<Livro>{
 			em.close();
 		}
 	}
+
+	@Override
+	public List<Livro> listar() {
+		List<Livro> livros = new ArrayList<Livro>();
+		EntityManager em = JPAUtil.getEntityManager();
+		try {
+			livros = em.createQuery("from " + Livro.class.getSimpleName(), Livro.class).getResultList();
+			return livros;
+		}finally {
+			em.close();
+		}
+	}
+	
+	
 
 }

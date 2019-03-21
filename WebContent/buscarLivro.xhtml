@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core">
+	  
+ <h:body>
+ 	<h:messages/>
+	<h:form>
+		<h:panelGrid columns="2">
+			<h:outputLabel value="Digite o Id: " for="id"/>
+			<h:inputText id="id" value="#{livroBean.livro.id}"/>
+			<h:commandButton value="Buscar" action="#{livroBean.buscarPorId}"/>
+		</h:panelGrid>
+	</h:form>
+	<h:panelGrid columns="2">
+		<h:outputLabel value="Título: " for="titulo"/>
+		<h:outputText id="titulo" value="#{livroBean.livro.titulo}"/>
+		<h:outputLabel value="Quantidade de Páginas: " for="paginas"/>
+		<h:outputText id="paginas" value="#{livroBean.livro.qtdePaginas}"/>
+	</h:panelGrid>
+ </h:body>
+</html>

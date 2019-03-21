@@ -10,7 +10,7 @@ public class JPAUtil {
 	
 	static {
 		if(instance == null) {
-			instance = Persistence.createEntityManagerFactory("biblioteca-mysql");
+			instance = Persistence.createEntityManagerFactory("livraria-mysql");
 		}
 	}
 	

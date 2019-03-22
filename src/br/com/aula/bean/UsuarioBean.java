@@ -20,32 +20,26 @@ public class UsuarioBean {
 	public List<Usuario> getUsuarios() {
 		return usuarios;
 	}
-
 	public void setUsuarios(List<Usuario> usuarios) {
 		this.usuarios = usuarios;
 	}
-
 	public UsuarioBean() {
 		usuario = new Usuario();
 		uDao = new UsuarioDAO();
 		usuarios = uDao.listar();
 	}
-
 	public Usuario getUsuario() {
 		return usuario;
 	}
-
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-	
 	public void cadastrarUsuario() {
 		uDao = new UsuarioDAO();
 		uDao.salvar(usuario);
 		usuario = new Usuario();
 		FacesContext.getCurrentInstance().addMessage(FacesMessage.FACES_MESSAGES, new FacesMessage("Cadastrado Com Sucesso!"));
 	}
-	
 	public void buscarPorId() {
 		uDao = new UsuarioDAO();
 		Usuario uBusca = uDao.buscarPorId(usuario.getId());
@@ -55,7 +49,6 @@ public class UsuarioBean {
 			FacesContext.getCurrentInstance().addMessage(FacesMessage.FACES_MESSAGES, new FacesMessage("Usuario não encontrado!"));
 		}
 	}
-	
 	public void validarCpf(FacesContext context, UIComponent component, Object object)
 	throws ValidatorException{
 		String cpf = (String) object;
@@ -63,7 +56,6 @@ public class UsuarioBean {
 			throw new ValidatorException(new FacesMessage("Inicie o Cpf com zero"));
 		}
 	}
-	
 	public void removerPorId() {
 		uDao = new UsuarioDAO();
 		Usuario uBusca = uDao.buscarPorId(usuario.getId());

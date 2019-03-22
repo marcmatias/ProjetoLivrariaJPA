@@ -6,7 +6,9 @@ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
 
 	<persistence-unit name="livraria-mysql">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>br.com.aula.model.Autor</class>
 		<class>br.com.aula.model.Livro</class>
+		<class>br.com.aula.model.Usuario</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/livraria" />

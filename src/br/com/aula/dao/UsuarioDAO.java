@@ -40,7 +40,6 @@ public class UsuarioDAO implements GenericDAO<Usuario>{
 		}finally {
 			em.close();
 		}
-		
 	}
 
 	@Override
@@ -64,7 +63,5 @@ public class UsuarioDAO implements GenericDAO<Usuario>{
 			em.close();
 		}
 	}
-	
-	
 
 }

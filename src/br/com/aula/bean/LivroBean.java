@@ -20,30 +20,24 @@ public class LivroBean {
 		lDao = new LivroDAO();
 		livros = lDao.listar();
 	}
-	
 	public Livro getLivro() {
 		return livro;
 	}
-
 	public void setLivro(Livro livro) {
 		this.livro = livro;
 	}
-	
 	public List<Livro> getLivros() {
 		return livros;
 	}
-
 	public void setLivros(List<Livro> livros) {
 		this.livros = livros;
 	}
-	
 	public void cadastrarLivro() {
 		lDao = new LivroDAO();
 		lDao.salvar(livro);
 		livro = new Livro();
 		FacesContext.getCurrentInstance().addMessage(FacesMessage.FACES_MESSAGES, new FacesMessage("Cadastrado com Sucesso!"));
 	}
-	
 	public void buscarPorId() {
 		lDao = new LivroDAO();
 		Livro lBusca = lDao.buscarPorId(livro.getId());
@@ -52,7 +46,6 @@ public class LivroBean {
 			FacesContext.getCurrentInstance().addMessage(FacesMessage.FACES_MESSAGES, new FacesMessage("Livro não Encontrado!"));
 		}
 	}
-	
 	public void removerPorId() {
 		lDao = new LivroDAO();
 		Livro lBusca = lDao.buscarPorId(livro.getId());

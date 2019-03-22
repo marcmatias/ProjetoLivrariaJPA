@@ -5,13 +5,13 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import br.com.aula.model.Livro;
+import br.com.aula.model.Autor;
 import br.com.aula.util.JPAUtil;
 
-public class LivroDAO implements GenericDAO<Livro>{
+public class AutorDAO implements GenericDAO<Autor> {
 
 	@Override
-	public void salvar(Livro entidade) {
+	public void salvar(Autor entidade) {
 		EntityManager em = JPAUtil.getEntityManager();
 		try{
 			em.getTransaction().begin();
@@ -23,7 +23,7 @@ public class LivroDAO implements GenericDAO<Livro>{
 			em.getTransaction().commit();
 		}finally {
 			em.close();
-		}
+		}		
 	}
 
 	@Override
@@ -32,37 +32,36 @@ public class LivroDAO implements GenericDAO<Livro>{
 		try {
 			em.getTransaction().begin();
 			
-			Livro livro = em.find(Livro.class, id);
+			Autor autor = em.find(Autor.class, id);
 			
-			em.remove(livro);
+			em.remove(autor);
 			
 			em.getTransaction().commit();
 		}finally {
 			em.close();
-		}
-		
+		}		
 	}
 
 	@Override
-	public Livro buscarPorId(int id) {
+	public Autor buscarPorId(int id) {
 		EntityManager em = JPAUtil.getEntityManager();
 		try {
-			return em.find(Livro.class, id);
+			return em.find(Autor.class, id);
 		}finally {
 			em.close();
 		}
 	}
 
 	@Override
-	public List<Livro> listar() {
-		List<Livro> livros = new ArrayList<Livro>();
+	public List<Autor> listar() {
+		List<Autor> autores = new ArrayList<Autor>();
 		EntityManager em = JPAUtil.getEntityManager();
 		try {
-			livros = em.createQuery("from " + Livro.class.getSimpleName(), Livro.class).getResultList();
-			return livros;
+			autores = em.createQuery("from " + Autor.class.getSimpleName(), Autor.class).getResultList();
+			return autores;
 		}finally {
 			em.close();
 		}
 	}
-	
+
 }

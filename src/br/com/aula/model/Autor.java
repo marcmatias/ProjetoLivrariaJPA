@@ -6,45 +6,39 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Usuario {
+public class Autor {
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
-	private String cpf;
+	private String paisDeOrigem;
 	
-	public Usuario() {
-		
+	public Autor() {
+		super();
 	}
-	
-	public Usuario(String nome, String cpf) {
+	public Autor(String nome, String paisDeOrigem) {
 		super();
 		this.nome = nome;
-		this.cpf = cpf;
+		this.paisDeOrigem = paisDeOrigem;
 	}
-
+	public String getPaisDeOrigem() {
+		return paisDeOrigem;
+	}
+	public void setPaisDeOrigem(String paisDeOrigem) {
+		this.paisDeOrigem = paisDeOrigem;
+	}
 	public String getNome() {
 		return nome;
 	}
-
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
-	public String getCpf() {
-		return cpf;
-	}
-
 	public Integer getId() {
 		return id;
 	}
-
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-
+	
 }
